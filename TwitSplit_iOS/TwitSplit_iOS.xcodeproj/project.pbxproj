@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F66BF951F6CA0A000381A37 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66BF941F6CA0A000381A37 /* Toast.swift */; };
+		4F66BF991F6CAACF00381A37 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4F66BF981F6CAACF00381A37 /* README.md */; };
 		4F7CF2971F6BA20400706749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7CF2961F6BA20400706749 /* AppDelegate.swift */; };
 		4F7CF2991F6BA20400706749 /* TwitSplitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7CF2981F6BA20400706749 /* TwitSplitVC.swift */; };
 		4F7CF29C1F6BA20400706749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7CF29A1F6BA20400706749 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		4F66BF941F6CA0A000381A37 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		4F66BF981F6CAACF00381A37 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		4F7CF2931F6BA20400706749 /* TwitSplit_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitSplit_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F7CF2961F6BA20400706749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F7CF2981F6BA20400706749 /* TwitSplitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitSplitVC.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		4F7CF2B61F6BA23700706749 /* SupportingFile */ = {
 			isa = PBXGroup;
 			children = (
+				4F66BF981F6CAACF00381A37 /* README.md */,
 				4F7CF29A1F6BA20400706749 /* Main.storyboard */,
 				4F7CF29D1F6BA20400706749 /* Assets.xcassets */,
 				4F7CF29F1F6BA20400706749 /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 			files = (
 				4F7CF2B81F6BA26C00706749 /* UtilFuntions.swift in Sources */,
 				4F66BF951F6CA0A000381A37 /* Toast.swift in Sources */,
+				4F66BF991F6CAACF00381A37 /* README.md in Sources */,
 				4F7CF2991F6BA20400706749 /* TwitSplitVC.swift in Sources */,
 				4F7CF2971F6BA20400706749 /* AppDelegate.swift in Sources */,
 			);
