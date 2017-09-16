@@ -95,7 +95,7 @@
 				4F7CF2981F6BA20400706749 /* TwitSplitVC.swift */,
 				4F7CF2B71F6BA26C00706749 /* UtilFuntions.swift */,
 				4F66BF931F6CA07800381A37 /* Libs */,
-				4F7CF2B61F6BA23700706749 /* SupportingFile */,
+				4F7CF2B61F6BA23700706749 /* Supporting Files */,
 			);
 			path = TwitSplit_iOS;
 			sourceTree = "<group>";
@@ -109,7 +109,7 @@
 			path = TwitSplit_iOSTests;
 			sourceTree = "<group>";
 		};
-		4F7CF2B61F6BA23700706749 /* SupportingFile */ = {
+		4F7CF2B61F6BA23700706749 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				4F66BF981F6CAACF00381A37 /* README.md */,
@@ -118,7 +118,7 @@
 				4F7CF29F1F6BA20400706749 /* LaunchScreen.storyboard */,
 				4F7CF2A21F6BA20400706749 /* Info.plist */,
 			);
-			name = SupportingFile;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
