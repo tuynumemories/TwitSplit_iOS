@@ -8,7 +8,7 @@ Instead of rejecting these messages, we would like to add a new feature that wil
 # splitMessage Function
 The functionality that splits messages is standalone function in "UtilFuntions.swift"
 
-# Test
+# Unit Test
 Test function is in "TwitSplit_iOSTests.swift" file
 
 Run test in Xcode by:
