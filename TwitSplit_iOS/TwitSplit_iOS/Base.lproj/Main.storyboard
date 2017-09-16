@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Twit SplitVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TwitSplitVC" customModule="TwitSplit_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweeter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t9-Z0-lRy">
+                                <rect key="frame" x="132" y="58" width="110" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="ZWZ-OF-lys"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t7F-DR-Q3G">
+                                <rect key="frame" x="25" y="130" width="326" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VGx-N8-jhq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE1-Ii-l8c">
+                                <rect key="frame" x="139" y="196" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zd7-yW-4Qy"/>
+                                </constraints>
+                                <state key="normal" title="Post Message"/>
+                                <connections>
+                                    <action selector="btnPostMessageClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uaz-pa-fTa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5t9-Z0-lRy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="0QU-qP-W80"/>
+                            <constraint firstItem="5t9-Z0-lRy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="116" id="3n7-xH-WcW"/>
+                            <constraint firstItem="iE1-Ii-l8c" firstAttribute="top" secondItem="t7F-DR-Q3G" secondAttribute="bottom" constant="36" id="4vz-ae-Tjl"/>
+                            <constraint firstItem="t7F-DR-Q3G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="4yr-RQ-L3b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iE1-Ii-l8c" secondAttribute="trailing" constant="123" id="6wD-dc-HYt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5t9-Z0-lRy" secondAttribute="trailing" constant="117" id="B05-AJ-TD0"/>
+                            <constraint firstItem="t7F-DR-Q3G" firstAttribute="top" secondItem="5t9-Z0-lRy" secondAttribute="bottom" constant="38" id="Dxk-aT-NGe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t7F-DR-Q3G" secondAttribute="trailing" constant="8" id="UW3-QV-RQc"/>
+                            <constraint firstItem="iE1-Ii-l8c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="123" id="mOO-aU-Fsu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tfUserMessage" destination="t7F-DR-Q3G" id="qkh-Z9-dHg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+</document>
