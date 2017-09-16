@@ -55,6 +55,7 @@ class TwitSplit_iOSTests: XCTestCase {
         result = UtilFunctions.splitMessage(message)
         XCTAssertNotNil(result)
         XCTAssertEqual(result?.count, 1)
+        XCTAssertTrue(testValidEachPartOfSplitMessage(splits: result!))
         XCTAssertEqual(result?[0], "")
         
         // case 4 string less than 50 value
@@ -62,6 +63,7 @@ class TwitSplit_iOSTests: XCTestCase {
         result = UtilFunctions.splitMessage(message)
         XCTAssertNotNil(result)
         XCTAssertEqual(result?.count, 1)
+        XCTAssertTrue(testValidEachPartOfSplitMessage(splits: result!))
         XCTAssertEqual(result?[0], "I can't believe Tweeter now supports chunking")
         
     }
