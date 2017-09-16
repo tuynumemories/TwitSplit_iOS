@@ -9,5 +9,5 @@ Instead of rejecting these messages, we would like to add a new feature that wil
 Test function is in "TwitSplit_iOSTests/TwitSplit_iOSTests.swift" file
 
 Run test in Xcode by:
-1. Menu Product/Test 
-2. Shortcut ⌘U
+1. Menu: Product/Test 
+2. Shortcut: ⌘U
