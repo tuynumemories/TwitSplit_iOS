@@ -28,13 +28,14 @@ class TwitSplit_iOSTests: XCTestCase {
     /// - Returns: return true if splits parts are valid, false if not
     func testValidEachPartOfSplitMessage(splits: [String]) -> Bool {
         for subMessage in splits {
+            print("subMessage.characters.count \(subMessage.characters.count)")
             if subMessage.characters.count > 50 { return false }
         }
         return true
     }
     
-    /// function to test split message base on real case
-    func testSplitMessage() {
+    /// test split message function base on real case
+    func testSplitMessageFunc() {
         
         // case 1 valid value
         var message = "I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself."
@@ -66,6 +67,39 @@ class TwitSplit_iOSTests: XCTestCase {
         XCTAssertTrue(testValidEachPartOfSplitMessage(splits: result!))
         XCTAssertEqual(result?[0], "I can't believe Tweeter now supports chunking")
         
+        // case 5 big string
+        message = ""
+        for _ in 0...100 {
+            message += "I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself."
+        }
+        result = UtilFunctions.splitMessage(message)
+        XCTAssertTrue(testValidEachPartOfSplitMessage(splits: result!))
+        
+        
+    }
+    
+    /// test function get number characters of integer
+    func testNumberCharactersFunc() {
+        // Test Int with 1 character
+        for i in 0..<10 {
+            let numberOfCharacters = UtilFunctions.numberCharacters(of: i)
+            XCTAssertEqual(numberOfCharacters, 1)
+        }
+        // Test Int with 2 characters
+        for i in 10..<100 {
+            let numberOfCharacters = UtilFunctions.numberCharacters(of: i)
+            XCTAssertEqual(numberOfCharacters, 2)
+        }
+        // Test Int with 3 characters
+        for i in 100..<1000 {
+            let numberOfCharacters = UtilFunctions.numberCharacters(of: i)
+            XCTAssertEqual(numberOfCharacters, 3)
+        }
+        // Test Int with 4 characters
+        for i in 1000..<10000 {
+            let numberOfCharacters = UtilFunctions.numberCharacters(of: i)
+            XCTAssertEqual(numberOfCharacters, 4)
+        }
     }
     
 }

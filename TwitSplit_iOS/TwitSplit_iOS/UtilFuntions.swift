@@ -38,13 +38,15 @@ class PosOfSplit {
     func getNumberOfRedundantCharacter(_ message: String, numberOfParts: Int, maxCharacter: Int) -> Int? {
         let suffix = "\(index)/\(numberOfParts)"
         var subMesssage = ""
+        var maxCharacter = maxCharacter
         if endIndex != message.endIndex {
+            maxCharacter += 1 // add 1 for space
             subMesssage = message[startIndex...endIndex]
         } else {
             subMesssage = message[startIndex..<endIndex]
         }
         let fullSubMessage = suffix + " " + subMesssage
-        let newEndIndexFullSubMessage = fullSubMessage.index(fullSubMessage.startIndex, offsetBy: maxCharacter + 1, limitedBy: fullSubMessage.endIndex) ?? fullSubMessage.endIndex
+        let newEndIndexFullSubMessage = fullSubMessage.index(fullSubMessage.startIndex, offsetBy: maxCharacter, limitedBy: fullSubMessage.endIndex) ?? fullSubMessage.endIndex
         if newEndIndexFullSubMessage == fullSubMessage.endIndex && endIndex == message.endIndex {
             return 0
         }
@@ -79,6 +81,22 @@ class PosOfSplit {
 
 class UtilFunctions{
     
+    
+    /// get number of character of integer
+    ///
+    /// - Parameter number: int number
+    /// - Returns: number of character of input number
+    public static func numberCharacters(of number:Int) -> Int {
+        guard number > 0 else { return 1 }
+        var number = number
+        var numberOfDigit = 0
+        while number > 0 {
+            numberOfDigit += 1
+            number = number/10
+        }
+        return numberOfDigit
+    }
+    
     /// Split message into parts (each part have length <= maxCharacter)
     ///
     /// - Parameters:
@@ -111,21 +129,20 @@ class UtilFunctions{
             var pos = posList[checkPosition]
             if let numberOfRedundantCharacter = pos.getNumberOfRedundantCharacter(message, numberOfParts: count, maxCharacter: maxCharacter) {
                 if numberOfRedundantCharacter > 0 {
-                    for j in (checkPosition+1)..<posList.count {
-                        pos = posList[j]
-                        pos.startIndex = message.index(pos.startIndex, offsetBy: -numberOfRedundantCharacter, limitedBy: message.endIndex) ?? message.endIndex
-                        pos.endIndex = message.index(pos.endIndex, offsetBy: -numberOfRedundantCharacter, limitedBy: message.endIndex) ?? message.endIndex
+                    if checkPosition == posList.count - 1 {
+                        count += 1
+                        posList.append(PosOfSplit(index: count, startIndex: pos.endIndex, endIndex: message.endIndex))
+                        if numberCharacters(of: count-1) != numberCharacters(of: count) {
+                            lastSuccessPosPosition = -1
+                        }
                         
-                        if j == posList.count - 1 {
-                            if pos.endIndex != message.endIndex {
-                                // add new pos
-                                count += 1
-                                let expectedSuffix = "\(count)/\(count)"
-                                let newStartIndex = pos.endIndex
-                                let newEndIndex = message.index(startIndex, offsetBy: maxCharacter + 1 - expectedSuffix.characters.count, limitedBy: message.endIndex) ?? message.endIndex
-                                posList.append(PosOfSplit(index: count, startIndex: newStartIndex, endIndex: newEndIndex))
-                                lastSuccessPosPosition = -1
-                                break
+                    } else {
+                        for j in (checkPosition+1)..<posList.count {
+                            pos = posList[j]
+                            pos.startIndex = message.index(pos.startIndex, offsetBy: -numberOfRedundantCharacter, limitedBy: message.endIndex) ?? message.endIndex
+                            // j is not last position in postList
+                            if j != posList.count - 1 {
+                                pos.endIndex = message.index(pos.endIndex, offsetBy: -numberOfRedundantCharacter, limitedBy: message.endIndex) ?? message.endIndex
                             }
                         }
                     }
