@@ -21,19 +21,6 @@ class TwitSplit_iOSTests: XCTestCase {
         super.tearDown()
     }
     
-    
-    /// test valid number of character each split part
-    ///
-    /// - Parameter splits: all split part of message
-    /// - Returns: return true if splits parts are valid, false if not
-    func testValidEachPartOfSplitMessage(splits: [String]) -> Bool {
-        for subMessage in splits {
-            print("subMessage.characters.count \(subMessage.characters.count)")
-            if subMessage.characters.count > 50 { return false }
-        }
-        return true
-    }
-    
     /// test split message function base on real case
     func testSplitMessageFunc() {
         
@@ -76,6 +63,19 @@ class TwitSplit_iOSTests: XCTestCase {
         XCTAssertTrue(testValidEachPartOfSplitMessage(splits: result!))
         
         
+    }
+    
+    
+    /// test valid number of character each split part
+    ///
+    /// - Parameter splits: all split part of message
+    /// - Returns: return true if splits parts are valid, false if not
+    func testValidEachPartOfSplitMessage(splits: [String]) -> Bool {
+        for subMessage in splits {
+            print("subMessage.characters.count \(subMessage.characters.count)")
+            if subMessage.characters.count > 50 { return false }
+        }
+        return true
     }
     
     /// test function get number characters of integer
